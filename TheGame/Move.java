@@ -1,19 +1,19 @@
 
 /**
- * Takes in the input. 
+ * Write a description of class Move here.
  *
- * @author Team Mercy Score
- * @version 5-13-2019
+ * @author (your name)
+ * @version (a version number or a date)
  */
-public class Monitor
+public class Move
 {
     // instance variables - replace the example below with your own
     private int x;
 
     /**
-     * Constructor for objects of class Monitor
+     * Constructor for objects of class Move
      */
-    public Monitor()
+    public Move()
     {
         // initialise instance variables
         x = 0;
