@@ -35,8 +35,8 @@ public class Move
     /**
      * Tells whether one move is equal to another
      *
-     * @param  y  another move to compare to
-     * @return    if the move is equal return true, else return false
+     * @param  y  another Move to compare to
+     * @return    if the Move is equal return true, else return false
      */
     public boolean equals(Move y)
     {
@@ -47,6 +47,29 @@ public class Move
     }
     
     /**
-     * Compa
+     * Compares the moves to each other based on whether the incoming Move 
+     * will beat the current Move
+     * 
+     * Precondition - the incoming Move type is not equal to the current Move
+     * 
+     * @param  y  another Move to compare to
+     * @return    if the incoming Move beats the current Move, the program
+     *            will return a negative value, else it will return positive
+     *            if the current Move beats the incoming Move, otherwise
+     *            the program will return 0
      */
+    public int compareTo(Move y)
+    {
+        int ret = 0;
+        
+        //if the current move is doing nothing or reloading, and the incoming
+        //move is shooting at you
+        if((myType == 1 || myType == 4) && y.getType() == 2)
+            ret = -1;
+        else
+            if((y.getType() == 1 || y.getType() == 4 && myType == 2))
+                ret = 1;
+        
+        return ret;
+    }
 }
