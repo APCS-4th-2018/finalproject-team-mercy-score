@@ -15,14 +15,13 @@ public class Player extends Double07
      */
     public Player()
     {
-        // initialise instance variables
         x = 0;
     }
 
     /**
-     * An example of a method - replace this comment with your own
+     * Setting the Move for the character
      *
-     * @param  y  a sample parameter for a method
+     * @param  
      * @return    the sum of x and y
      */
     public int sampleMethod(int y)
