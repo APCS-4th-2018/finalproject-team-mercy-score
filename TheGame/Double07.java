@@ -10,6 +10,7 @@ public class Double07
     // instance variables - replace the example below with your own
     private int numBullets;
     private int numLives;
+    private Move currentMove;
 
     /**
      * Constructor for objects of class Double07
@@ -20,6 +21,7 @@ public class Double07
         numBullets = 0;
         //U get a random number of lives from 2 to 4
         numLives = (int) (Math.random() * 3 + 2);
+        currentMove = new Move(4);
     }
 
     /**
@@ -72,10 +74,22 @@ public class Double07
         return ans;
     }
     
+    /**
+     * Tells the program whether or not the move being made is valid
+     * 
+     * @param   x   Move being passed into the program
+     * @return      Returns a boolean valued based on if the move is legal
+     *              i.e. if the player tries to shoot when he has no bullets
+     */
     public boolean isMoveAllowed(Move x)
     {
-        //do this later
-        return true;
+        boolean ret = true;
+        
+        if(x.getType() == 2 && numBullets <= 0)
+            ret = false;
+        //add in more stuff if we want to have a set amount of blocks
+        return ret;
     }
+    
     
 }
