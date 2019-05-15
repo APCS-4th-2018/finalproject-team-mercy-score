@@ -7,27 +7,39 @@
  */
 public class CPU extends Double07
 {
-    // instance variables - replace the example below with your own
-    private int x;
+    
 
     /**
-     * Constructor for objects of class CPU
+     * Sets the current move to whatever based on logic
      */
-    public CPU()
+    public void setMove(Double07 opp)
     {
-        // initialise instance variables
-        x = 0;
-    }
-
-    /**
-     * An example of a method - replace this comment with your own
-     *
-     * @param  y  a sample parameter for a method
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
+        //This random double helps us make a decision using chance
+        double myRandomVar = Math.random();
+        //probability that we are gonna shoot
+        double triggerHappy = 1 - opp.getBlockCounter()/(MAXBLOCKS + 5.00) ;
+        //Probability of blocking
+        double willIBlock;
+        
+        Move temp, ans;
+        
+        temp  = new Move(2);
+        if (  myRandomVar < triggerHappy && isMoveAllowed(temp)  )
+            ans = temp;
+        else
+        {
+            myRandomVar = Math.random();
+            
+            if(myRandomVar < .5)
+            {
+                if(isMoveAllowed(new Move(3)))
+                    ans = new Move(3);
+                else
+                    ans = new Move(4);
+            }
+            else
+                ans = new Move(1);
+        }
+        currentMove = ans;
     }
 }

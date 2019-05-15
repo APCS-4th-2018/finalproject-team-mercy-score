@@ -12,6 +12,7 @@ public class Double07
     private int numLives;
     protected Move currentMove;
     private int blockCounter;
+    protected final int MAXBLOCKS = 10;
 
     /**
      * Constructor for objects of class Double07
@@ -24,7 +25,7 @@ public class Double07
         numLives = (int) (Math.random() * 3 + 2);
         currentMove = new Move(4);
         //U get a random block counter: set it equal to 10
-        blockCounter = 10;
+        blockCounter = MAXBLOCKS;
     }
 
     /**
@@ -121,7 +122,9 @@ public class Double07
      */
     public void setBlockCounter(int newBlockCounter)
     {
-        blockCounter = newBlockCounter;
+        if (newBlockCounter < MAXBLOCKS)
+            blockCounter = newBlockCounter;
+
     }
     
 
