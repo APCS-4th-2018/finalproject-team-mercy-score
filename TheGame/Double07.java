@@ -91,5 +91,13 @@ public class Double07
         return ret;
     }
     
-    
+    /**
+     * Gives the program the current Move that object is using
+     * 
+     * @return      Returns the Move object that the Player or CPU is using
+     */
+    public Move getMove()
+    {
+        return currentMove;
+    }
 }
