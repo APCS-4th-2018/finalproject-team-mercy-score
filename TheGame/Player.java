@@ -1,6 +1,6 @@
 
 /**
- * Write a description of class Player here.
+ * User DOuble07 player
  *
  * @author (your name)
  * @version (a version number or a date)

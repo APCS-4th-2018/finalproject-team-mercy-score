@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class CPU here.
+ * Computer Double07 player
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Team Mercy Score
+ * @version 
  */
 public class CPU extends Double07
 {

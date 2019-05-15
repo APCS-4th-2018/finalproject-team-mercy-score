@@ -10,7 +10,8 @@ public class Double07
     // instance variables - replace the example below with your own
     private int numBullets;
     private int numLives;
-    private Move currentMove;
+    protected Move currentMove;
+    private int blockCounter;
 
     /**
      * Constructor for objects of class Double07
@@ -22,6 +23,8 @@ public class Double07
         //U get a random number of lives from 2 to 4
         numLives = (int) (Math.random() * 3 + 2);
         currentMove = new Move(4);
+        //U get a random block counter: set it equal to 10
+        blockCounter = 10;
     }
 
     /**
@@ -87,6 +90,8 @@ public class Double07
         
         if(x.getType() == 2 && numBullets <= 0)
             ret = false;
+        if (x.getType() == 3 && getBlockCounter() < 2)
+            ret = false;
         //add in more stuff if we want to have a set amount of blocks
         return ret;
     }
@@ -100,4 +105,24 @@ public class Double07
     {
         return currentMove;
     }
+    
+    /**
+     * Accessor for the current block counter
+     * @return      returns current block counter
+     */
+    public int getBlockCounter()
+    { 
+        return blockCounter;
+    }
+    
+    /**
+     * Setter for the current block counter
+     * @param int newBlockCounter  -  value to set the block counter to
+     */
+    public void setBlockCounter(int newBlockCounter)
+    {
+        blockCounter = newBlockCounter;
+    }
+    
+
 }
