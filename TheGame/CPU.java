@@ -3,12 +3,10 @@
  * Computer Double07 player
  *
  * @author Team Mercy Score
- * @version 
+ * @version 5/15/2019
  */
 public class CPU extends Double07
 {
-    
-
     /**
      * Sets the current move to whatever based on logic
      */
@@ -17,7 +15,7 @@ public class CPU extends Double07
         //This random double helps us make a decision using chance
         double myRandomVar = Math.random();
         //probability that we are gonna shoot
-        double triggerHappy = 1 - opp.getBlockCounter()/(MAXBLOCKS + 5.00) ;
+        double triggerHappy =   1-opp.getBlockCounter()/(MAXBLOCKS + 1.00 + getBullets())  ;
         //Probability of blocking
         double willIBlock;
         
@@ -29,8 +27,8 @@ public class CPU extends Double07
         else
         {
             myRandomVar = Math.random();
-            
-            if(myRandomVar < .5)
+            willIBlock = 3.00/(3.00+ ( getBlockCounter() )*( Math.log(opp.getBullets()) )  );
+            if(myRandomVar < willIBlock)
             {
                 if(isMoveAllowed(new Move(3)))
                     ans = new Move(3);

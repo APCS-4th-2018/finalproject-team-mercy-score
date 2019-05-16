@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=CPU
-comment0.text=\n\ Computer\ Double07\ player\n\n\ @author\ Team\ Mercy\ Score\n\ @version\ \n
+comment0.text=\r\n\ Computer\ Double07\ player\r\n\r\n\ @author\ Team\ Mercy\ Score\r\n\ @version\ 5/15/2019\r\n
 comment1.params=opp
 comment1.target=void\ setMove(Double07)
-comment1.text=\n\ Sets\ the\ current\ move\ to\ whatever\ based\ on\ logic\n
+comment1.text=\r\n\ Sets\ the\ current\ move\ to\ whatever\ based\ on\ logic\r\n
 numComments=2
