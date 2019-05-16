@@ -1,10 +1,7 @@
 #BlueJ class context
 comment0.target=Player
 comment0.text=\n\ User\ DOuble07\ player\n\n\ @author\ (your\ name)\n\ @version\ (a\ version\ number\ or\ a\ date)\n
-comment1.params=
-comment1.target=Player()
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Player\n
-comment2.params=y
-comment2.target=int\ sampleMethod(int)
-comment2.text=\n\ Setting\ the\ Move\ for\ the\ character\n\n\ @param\ \ \n\ @return\ \ \ \ the\ sum\ of\ x\ and\ y\n
-numComments=3
+comment1.params=input
+comment1.target=void\ setMove(Move)
+comment1.text=\n\ Sets\ the\ current\ move\ to\ match\ some\ input\ somewhere\n\ @param\ Move\ input\ -\ value\ to\ set\ the\ move\ to\n
+numComments=2

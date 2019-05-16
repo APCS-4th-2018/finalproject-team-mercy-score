@@ -7,26 +7,17 @@
  */
 public class Player extends Double07
 {
-    // instance variables - replace the example below with your own
-    private int x;
+
 
     /**
-     * Constructor for objects of class Player
+     * Sets the current move to match some input somewhere
+     * @param Move input - value to set the move to
      */
-    public Player()
+    public void setMove(Move input)
     {
-        x = 0;
+        currentMove = input;
+        dealWithCounters(currentMove.getType());
     }
-
-    /**
-     * Setting the Move for the character
-     *
-     * @param  
-     * @return    the sum of x and y
-     */
-    public int sampleMethod(int y)
-    {
-        // put your code here
-        return x + y;
-    }
+    
+    
 }

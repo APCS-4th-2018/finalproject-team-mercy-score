@@ -127,5 +127,12 @@ public class Double07
 
     }
     
-
+    /*
+     * Helper method that increments all the counters when a move is set
+     * @param int type - the type of the move
+     */
+    protected void dealWithCounters(int type)
+    {
+        
+    }
 }
