@@ -33,7 +33,7 @@ public class CPU extends Double07
                 if(isMoveAllowed(new Move(3)))
                     ans = new Move(3);
                 else
-                    ans = new Move(4);
+                    ans = new Move(1);
             }
             else
                 ans = new Move(1);
