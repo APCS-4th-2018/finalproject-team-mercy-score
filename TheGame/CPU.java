@@ -15,7 +15,7 @@ public class CPU extends Double07
         //This random double helps us make a decision using chance
         double myRandomVar = Math.random();
         //probability that we are gonna shoot
-        double triggerHappy =   1-opp.getBlockCounter()/(MAXBLOCKS + 1.00 + getBullets())  ;
+        double triggerHappy =   1-0.6*opp.getBlockCounter()/(MAXBLOCKS + 1.00 + getBullets())  ;
         //Probability of blocking
         double willIBlock;
         Move temp, ans;
@@ -32,7 +32,7 @@ public class CPU extends Double07
             //Use a formula to calculate the probability of blocking
             //The probability of blocking is related to CPU number of block counters
                 //and the opponents number of bullets
-            willIBlock = 1.000 - (3.00/(3.00+ ( getBlockCounter() )*( Math.log(opp.getBullets()) )  ));
+            willIBlock = 1.000 - (3.00/(3.00+ ( getBlockCounter() )*( Math.log(opp.getBullets()+1.0) )  ));
             //If the random variable falls in the right range for a block
             if(myRandomVar < willIBlock)
             {

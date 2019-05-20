@@ -63,7 +63,8 @@ public class Double07
      */
     public void setBullets(int newNumBullets)
     {
-        numBullets = newNumBullets;
+        if (newNumBullets>= 0)
+            numBullets = newNumBullets;
     }
     
     /**
@@ -133,6 +134,21 @@ public class Double07
      */
     protected void dealWithCounters(int type)
     {
-        
+        switch(type)
+        {
+            case 1:
+                setBlockCounter(getBlockCounter()+1);
+                setBullets(getBullets()+1);
+                break;
+            case 2:
+                setBlockCounter(getBlockCounter()+1);
+                setBullets(getBullets()-1);
+                break;
+            case 3:
+                setBlockCounter(getBlockCounter()-2);
+                break;
+            case 4:
+                setBlockCounter(getBlockCounter()+1);
+        }
     }
 }

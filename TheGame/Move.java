@@ -67,7 +67,7 @@ public class Move
         if((myType == 1 || myType == 4) && y.getType() == 2)
             ret = -1;
         else
-            if((y.getType() == 1 || y.getType() == 4 && myType == 2))
+            if((y.getType() == 1 || y.getType() == 4) && myType == 2)
                 ret = 1;
         
         return ret;
