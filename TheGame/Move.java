@@ -73,4 +73,25 @@ public class Move
         return ret;
     }
     
+    public String toString()
+    {
+        String ret;
+        
+        if(myType == 1)
+            ret = "Reload";
+        else
+            if(myType == 2)
+                ret = "Shoot";
+            else
+                if(myType == 3)
+                    ret = "Block";
+                else
+                    ret = "Nothing";
+        
+        return ret;
+    }
+    
 }
+
+
+
