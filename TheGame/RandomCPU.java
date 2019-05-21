@@ -5,7 +5,7 @@
  * @author (your name)
  * @version (a version number or a date)
  */
-public class RandomCPU extends CPU
+public class RandomCPU extends Double07
 {
     
     public void setMove()
@@ -23,5 +23,6 @@ public class RandomCPU extends CPU
             else
                 currentMove = new Move(1);
         }
+        dealWithCounters(currentMove.getType());
     }
 }
