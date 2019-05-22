@@ -1,0 +1,9 @@
+#BlueJ class context
+comment0.target=theGame
+comment1.params=numWaves
+comment1.target=theGame(int)
+comment2.params=player1\ player2
+comment2.target=void\ setUserMoves(Move,\ Move)
+comment3.params=
+comment3.target=boolean\ nextWave()
+numComments=4

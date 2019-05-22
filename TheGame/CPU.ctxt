@@ -1,7 +1,15 @@
 #BlueJ class context
 comment0.target=CPU
 comment0.text=\n\ Computer\ Double07\ player\n\n\ @author\ Team\ Mercy\ Score\n\ @version\ 5/15/2019\n
-comment1.params=opp
-comment1.target=void\ setMove(Double07)
-comment1.text=\n\ Sets\ the\ current\ move\ to\ whatever\ based\ on\ logic\n
-numComments=2
+comment1.params=difficulty
+comment1.target=CPU(double)
+comment2.params=opp
+comment2.target=void\ setMove(Double07)
+comment3.params=opp
+comment3.target=void\ setMoveSmart(Double07)
+comment3.text=\n\ Sets\ the\ current\ move\ to\ whatever\ based\ on\ logic\n
+comment4.params=
+comment4.target=void\ setMoveRandom()
+comment5.params=
+comment5.target=double\ getDifficulty()
+numComments=6

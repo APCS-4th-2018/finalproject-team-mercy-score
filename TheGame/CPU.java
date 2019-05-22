@@ -7,10 +7,28 @@
  */
 public class CPU extends Double07
 {
-    /**
+    private double myDifficulty;
+    
+    public CPU(double difficulty)
+    {
+        if (difficulty < 11)
+            myDifficulty = difficulty;
+        else
+            myDifficulty = 10;
+    }
+    
+    public void setMove(Double07 opp)
+    {
+        double prob = myDifficulty / 10.0;
+        if(Math.random() < prob)
+            setMoveSmart(opp);
+        else
+            setMoveRandom();
+    }
+    /*
      * Sets the current move to whatever based on logic
      */
-    public void setMove(Double07 opp)
+    private void setMoveSmart(Double07 opp)
     {
         //This random double helps us make a decision using chance
         double myRandomVar = Math.random();
@@ -50,5 +68,28 @@ public class CPU extends Double07
         //Load the found move in currentMove
         currentMove = ans;
         dealWithCounters(currentMove.getType());
+    }
+    
+    private void setMoveRandom()
+    {
+        double chance = Math.random();
+        if (chance < 0.333 && isMoveAllowed(new Move(2)))
+        {
+            currentMove = new Move(2);
+        }
+        else
+        {
+            chance = Math.random();
+            if(chance < 0.5 && isMoveAllowed(new Move(3)))
+                currentMove = new Move(3);
+            else
+                currentMove = new Move(1);
+        }
+        dealWithCounters(currentMove.getType());
+    }
+    
+    public double getDifficulty()
+    {
+        return myDifficulty;
     }
 }

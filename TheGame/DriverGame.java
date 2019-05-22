@@ -4,18 +4,19 @@ public class DriverGame
 {
     public static void main(String[] args)
     {
-        CPU p1 = new CPU();
+        CPU p1 = new CPU((int)(Math.random() * 10) + 1);
         Player p2 = new Player();
         int smartWinsCount = 0;
         int moveNum;
         ConsoleIO reader = new ConsoleIO();
         for (int cnt =1; cnt<=1000; cnt++)
         {
-            p1 = new CPU();
+            p1 = new CPU((int)(Math.random() * 10) + 1);
             p2 = new Player();
             while((!p1.isDead()) && (!p2.isDead()))
             {
                 System.out.println("Opponent blocks: " + p1.getBlockCounter());
+                System.out.println("Opponent difficulty: " + p1.getDifficulty());
                 System.out.println("Ur blocks: " + p2.getBlockCounter());
                 System.out.println("Opponent bullet: " + p1.getBullets());
                 System.out.println("ur bullets: " + p2.getBullets());
