@@ -7,7 +7,7 @@
  */
 public class Double07
 {
-    // instance variables - replace the example below with your own
+    // instance variables
     private int numBullets;
     private int numLives;
     protected Move currentMove;
@@ -63,6 +63,7 @@ public class Double07
      */
     public void setBullets(int newNumBullets)
     {
+        //U can't set the numBullets to a negative number
         if (newNumBullets>= 0)
             numBullets = newNumBullets;
     }
@@ -90,11 +91,12 @@ public class Double07
     {
         boolean ret = true;
         
+        //IIf you don't have enough bullets to shoot
         if(x.getType() == 2 && numBullets <= 0)
             ret = false;
+        //If you don't have enough block counters to blocc
         if (x.getType() == 3 && getBlockCounter() < 2)
             ret = false;
-        //add in more stuff if we want to have a set amount of blocks
         return ret;
     }
     
@@ -123,6 +125,7 @@ public class Double07
      */
     public void setBlockCounter(int newBlockCounter)
     {
+        //You can't set the block counter to past the capacity of bloccs
         if (newBlockCounter < MAXBLOCKS)
             blockCounter = newBlockCounter;
 
@@ -136,17 +139,21 @@ public class Double07
     {
         switch(type)
         {
+            //Reloading
             case 1:
                 setBlockCounter(getBlockCounter()+1);
                 setBullets(getBullets()+1);
                 break;
+            //Shooting
             case 2:
                 setBlockCounter(getBlockCounter()+1);
                 setBullets(getBullets()-1);
                 break;
+            //Bloccing
             case 3:
                 setBlockCounter(getBlockCounter()-2);
                 break;
+            //Doing nothing
             case 4:
                 setBlockCounter(getBlockCounter()+1);
         }

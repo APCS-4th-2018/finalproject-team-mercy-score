@@ -11,12 +11,19 @@ public class CPU extends Double07
     
     public CPU(double difficulty)
     {
+        //Difficulty maxes out at 10
         if (difficulty < 11)
             myDifficulty = difficulty;
         else
             myDifficulty = 10;
     }
     
+    /**
+     * Sets the move based on the public stats of the opponent for a CPU
+     * Based on the difficulty, there's a certain probability that 
+     *          it will be set to a "smart" move
+     * @param Double07 opp - the opponent you're passing in
+    */
     public void setMove(Double07 opp)
     {
         double prob = myDifficulty / 10.0;
@@ -25,8 +32,10 @@ public class CPU extends Double07
         else
             setMoveRandom();
     }
+    
     /*
      * Sets the current move to whatever based on logic
+     * @param Double07 opp - the opponent
      */
     private void setMoveSmart(Double07 opp)
     {
@@ -70,6 +79,9 @@ public class CPU extends Double07
         dealWithCounters(currentMove.getType());
     }
     
+    /*
+     * Randomly selects an allowable move
+     */
     private void setMoveRandom()
     {
         double chance = Math.random();
@@ -88,6 +100,10 @@ public class CPU extends Double07
         dealWithCounters(currentMove.getType());
     }
     
+    /**
+     * Accessor for the difficulty from 0 to 10
+     * @return  double myDifficulty - the decimal value of difficulty
+     */
     public double getDifficulty()
     {
         return myDifficulty;
