@@ -1,6 +1,6 @@
 //
 import chn.util.*;
-public class DriverGame
+public class GameTester
 {
     public static void main(String[] args)
     {

@@ -1,0 +1,10 @@
+#BlueJ class context
+comment0.target=LoginScreen
+comment0.text=\n\ Start\ screen\ for\ the\ game\n\n\ @author\ Team\ Mercy\ Score\n\ @version\ 5-28-2019\n
+comment1.params=
+comment1.target=LoginScreen()
+comment2.params=myStage
+comment2.target=void\ start(javafx.stage.Stage)
+comment3.params=
+comment3.target=int\ getInput()
+numComments=4
