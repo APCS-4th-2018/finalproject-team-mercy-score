@@ -3,9 +3,9 @@ import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;
+import javafx.scene.text.*;
 import javafx.geometry.Insets;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
+import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
@@ -20,6 +20,8 @@ import javafx.scene.text.Text;
 public class LoginScreen extends Application
 {
     private int numWaves;
+    private TextField txtEntry;
+    private GridPane g;
     
     public LoginScreen()
     {
@@ -29,22 +31,49 @@ public class LoginScreen extends Application
     public void start(Stage myStage) throws Exception
     {
         GridPane grid = new GridPane();
-        grid.setHgap(100);
+        //grid.setHgap(300);
         grid.setAlignment(Pos.CENTER);
-        grid.setVgap(100);
+        //grid.setVgap(300);
         grid.setGridLinesVisible(true);
+        
+        //Show credits
         Text credits = new Text("TEAM MERCY SCORE");
-        credits.setFontSize(getFontSize()+10);
-        grid.add(credits, 0,0);
-        //grid.add(new Text("TEAM MERCY SCORE"), 0, 1);
+        credits.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        grid.add(credits, 0, 0);
+        
+        
+        //Prompt for number of waves
+        Text numWavesPrompt = new Text("Enter number of waves");
+        numWavesPrompt.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        grid.add(numWavesPrompt, 0, 1);
+        
+        //Get user input
+        TextField userTextField = new TextField();
+        grid.add(userTextField, 0, 2);
+        txtEntry = userTextField;
+        
+        //GO Button
+        Button goBtn = new Button("GO!");
+        grid.add(goBtn, 0,3);
+        goBtn.setOnAction(this::buttonClick);
+        
+        //Show it
         Scene myScene = new Scene(grid, 500, 500);
         myStage.setScene(myScene);
         myStage.show();
+        
     }
     
-    public int getInput()
+    
+     /**
+     * This will be executed when the button is clicked
+     * It increments the count by 1
+     */
+    private void buttonClick(ActionEvent event)
     {
-        return numWaves;
+        // Returns the value in the textfield
+        int ans = Integer.parseInt(txtEntry.getText());
+        grid.add()
     }
     
 
