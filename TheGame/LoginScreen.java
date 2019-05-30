@@ -35,6 +35,7 @@ public class LoginScreen extends Application
         grid.setAlignment(Pos.CENTER);
         //grid.setVgap(300);
         grid.setGridLinesVisible(true);
+        g = grid;
         
         //Show credits
         Text credits = new Text("TEAM MERCY SCORE");
@@ -73,7 +74,8 @@ public class LoginScreen extends Application
     {
         // Returns the value in the textfield
         int ans = Integer.parseInt(txtEntry.getText());
-        grid.add()
+        Text weDone = new Text("All ready!");
+        g.add(weDone,0, 4);
     }
     
 
