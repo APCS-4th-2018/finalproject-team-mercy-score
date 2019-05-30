@@ -2,14 +2,17 @@
 import javafx.application.Application;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.Scene;
+import javafx.scene.*;
 import javafx.scene.text.*;
+import javafx.scene.paint.*;
 import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.*;
 import javafx.geometry.Pos;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
+import javafx.scene.paint.Color;
+import javafx.scene.image.*;
 
 /**
  * Start screen for the game
@@ -19,18 +22,16 @@ import javafx.scene.text.Text;
  */
 public class LoginScreen extends Application
 {
-    private int numWaves;
     private TextField txtEntry;
     private GridPane g;
-    
-    public LoginScreen()
-    {
-        numWaves = 0;
-    }
     
     public void start(Stage myStage) throws Exception
     {
         GridPane grid = new GridPane();
+        ImagePattern myImPattern =  new ImagePattern( new Image("http://cdn.superbook.cbn.com/sites/default/files/wallpaper/wp_800_600/WP_FishFront_800_600.png") );
+        BackgroundFill myFill = new BackgroundFill(myImPattern, CornerRadii.EMPTY, Insets.EMPTY);
+        grid.setBackground(new Background(myFill));
+        //grid.setBackground(  new Background(new BackgroundFill(Color.DARKGRAY,CornerRadii.EMPTY, Insets.EMPTY ))  );
         //grid.setHgap(300);
         grid.setAlignment(Pos.CENTER);
         //grid.setVgap(300);
@@ -40,6 +41,7 @@ public class LoginScreen extends Application
         //Show credits
         Text credits = new Text("TEAM MERCY SCORE");
         credits.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
+        credits.setFill(Color.WHITE);
         grid.add(credits, 0, 0);
         
         
@@ -47,6 +49,7 @@ public class LoginScreen extends Application
         Text numWavesPrompt = new Text("Enter number of waves");
         numWavesPrompt.setFont(Font.font("Tahoma", FontWeight.NORMAL, 20));
         grid.add(numWavesPrompt, 0, 1);
+        numWavesPrompt.setFill(Color.WHITE);
         
         //Get user input
         TextField userTextField = new TextField();
@@ -55,8 +58,10 @@ public class LoginScreen extends Application
         
         //GO Button
         Button goBtn = new Button("GO!");
+        //goBtn.setFill(Color.WHITE);
         grid.add(goBtn, 0,3);
         goBtn.setOnAction(this::buttonClick);
+        
         
         Text weDone1 = new Text("");
         g.add(weDone1,0, 4);
@@ -80,6 +85,7 @@ public class LoginScreen extends Application
         g.getChildren().remove(5);
         int ans = Integer.parseInt(txtEntry.getText());
         Text weDone = new Text(ans+" waves set");
+        weDone.setFill(Color.WHITE);
         g.add(weDone,0, 4);
     }
     
