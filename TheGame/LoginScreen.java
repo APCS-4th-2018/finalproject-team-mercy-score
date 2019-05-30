@@ -58,6 +58,9 @@ public class LoginScreen extends Application
         grid.add(goBtn, 0,3);
         goBtn.setOnAction(this::buttonClick);
         
+        Text weDone1 = new Text("");
+        g.add(weDone1,0, 4);
+        
         //Show it
         Scene myScene = new Scene(grid, 500, 500);
         myStage.setScene(myScene);
@@ -72,9 +75,11 @@ public class LoginScreen extends Application
      */
     private void buttonClick(ActionEvent event)
     {
+
         // Returns the value in the textfield
+        g.getChildren().remove(5);
         int ans = Integer.parseInt(txtEntry.getText());
-        Text weDone = new Text("All ready!");
+        Text weDone = new Text(ans+" waves set");
         g.add(weDone,0, 4);
     }
     
