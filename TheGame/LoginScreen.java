@@ -62,7 +62,6 @@ public class LoginScreen extends Application
         grid.add(goBtn, 0,3);
         goBtn.setOnAction(this::buttonClick);
         
-        
         Text weDone1 = new Text("");
         g.add(weDone1,0, 4);
         
