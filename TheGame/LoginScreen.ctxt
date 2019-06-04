@@ -1,9 +1,9 @@
 #BlueJ class context
 comment0.target=LoginScreen
-comment0.text=\n\ Start\ screen\ for\ the\ game\n\n\ @author\ Team\ Mercy\ Score\n\ @version\ 5-28-2019\n
+comment0.text=\r\n\ Start\ screen\ for\ the\ game\r\n\r\n\ @author\ Team\ Mercy\ Score\r\n\ @version\ 5-28-2019\r\n
 comment1.params=myStage
 comment1.target=void\ start(javafx.stage.Stage)
 comment2.params=event
 comment2.target=void\ buttonClick(javafx.event.ActionEvent)
-comment2.text=\n\ This\ will\ be\ executed\ when\ the\ button\ is\ clicked\n\ It\ increments\ the\ count\ by\ 1\n
+comment2.text=\r\n\ This\ will\ be\ executed\ when\ the\ button\ is\ clicked\r\n\ It\ increments\ the\ count\ by\ 1\r\n
 numComments=3

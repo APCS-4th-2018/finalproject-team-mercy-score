@@ -38,6 +38,27 @@ public class theGame
         users[1].setMove(player2);
     }
     
+    /**
+     *  @return  Returns -1 if no player is dead
+     *      0 if player 1 is dead and player 2 is alive
+     *      1 if player 1 is alive and player 2 is dead
+     *      2 if both players dead
+     */
+    private int deadPlayers()
+    {
+        int ans;
+        if ( !users[0].isDead() && !users[1].isDead() )
+            ans = -1;
+        else
+            if (users[0].isDead() && users[1].isDead())
+                ans = 2;
+            else
+                if (users[0].isDead())
+                    ans= 0;
+                else
+                    ans = 1;
+        return ans;
+    }
     public boolean nextWave()
     {
         boolean ret = false;
@@ -50,5 +71,20 @@ public class theGame
         }
         
         return ret;
+    }
+
+    public void update()
+    {
+        
+    }
+
+    public Player[] getPlayers()
+    {
+        return users;
+    }    
+
+    public CPU[] getCPUs()
+    {
+        return fighters;
     }
 }
