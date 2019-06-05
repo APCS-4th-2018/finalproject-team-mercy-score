@@ -109,7 +109,7 @@ public class CPU extends Double07
         return myDifficulty;
     }
     
-    
+   
      /**
      * Accessor for name
      * @return  name
