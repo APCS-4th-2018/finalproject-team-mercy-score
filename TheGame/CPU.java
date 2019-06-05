@@ -8,7 +8,7 @@
 public class CPU extends Double07
 {
     private double myDifficulty;
-    
+    String name;
     public CPU(double difficulty)
     {
         //Difficulty maxes out at 10
@@ -107,5 +107,24 @@ public class CPU extends Double07
     public double getDifficulty()
     {
         return myDifficulty;
+    }
+    
+    
+     /**
+     * Accessor for name
+     * @return  name
+     */
+    public String getName()
+    {
+        return name;
+    }
+    
+    /**
+     * modifier for name
+     * @changes  name
+     */
+    public void changeName(String input)
+    {
+        name = input;
     }
 }
