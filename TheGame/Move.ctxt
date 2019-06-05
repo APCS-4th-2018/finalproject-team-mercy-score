@@ -1,18 +1,18 @@
 #BlueJ class context
 comment0.target=Move
-comment0.text=\n\ Object\ for\ a\ Move\ that\ the\ player\ makes\n\n\ @author\ Team\ Mercy\ Score\n\ @version\ 5-14-2019\n
+comment0.text=\r\n\ Object\ for\ a\ Move\ that\ the\ player\ makes\r\n\r\n\ @author\ Team\ Mercy\ Score\r\n\ @version\ 5-14-2019\r\n
 comment1.params=type
 comment1.target=Move(int)
-comment1.text=\n\ Constructor\ for\ objects\ of\ class\ Move\n
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ Move\r\n
 comment2.params=
 comment2.target=int\ getType()
-comment2.text=\n\ Accessor\ for\ the\ type\ of\ the\ move\n\ \n\ @return\ int\ type\ \ -\ type\ of\ move\ this\ is\n
+comment2.text=\r\n\ Accessor\ for\ the\ type\ of\ the\ move\r\n\ \r\n\ @return\ int\ type\ \ -\ type\ of\ move\ this\ is\r\n
 comment3.params=y
 comment3.target=boolean\ equals(Move)
-comment3.text=\n\ Tells\ whether\ one\ move\ is\ equal\ to\ another\n\n\ @param\ \ y\ \ another\ Move\ to\ compare\ to\n\ @return\ \ \ \ if\ the\ Move\ is\ equal\ return\ true,\ else\ return\ false\n
+comment3.text=\r\n\ Tells\ whether\ one\ move\ is\ equal\ to\ another\r\n\r\n\ @param\ \ y\ \ another\ Move\ to\ compare\ to\r\n\ @return\ \ \ \ if\ the\ Move\ is\ equal\ return\ true,\ else\ return\ false\r\n
 comment4.params=y
 comment4.target=int\ compareTo(Move)
-comment4.text=\n\ Compares\ the\ moves\ to\ each\ other\ based\ on\ whether\ the\ incoming\ Move\ \n\ will\ beat\ the\ current\ Move\n\ \n\ Precondition\ -\ the\ incoming\ Move\ type\ is\ not\ equal\ to\ the\ current\ Move\n\ \n\ @param\ \ y\ \ another\ Move\ to\ compare\ to\n\ @return\ \ \ \ if\ the\ incoming\ Move\ beats\ the\ current\ Move,\ the\ program\n\ \ \ \ \ \ \ \ \ \ \ \ will\ return\ a\ negative\ value,\ else\ it\ will\ return\ positive\n\ \ \ \ \ \ \ \ \ \ \ \ if\ the\ current\ Move\ beats\ the\ incoming\ Move,\ otherwise\n\ \ \ \ \ \ \ \ \ \ \ \ the\ program\ will\ return\ 0\n
+comment4.text=\r\n\ Compares\ the\ moves\ to\ each\ other\ based\ on\ whether\ the\ incoming\ Move\ \r\n\ will\ beat\ the\ current\ Move\r\n\ \r\n\ Precondition\ -\ the\ incoming\ Move\ type\ is\ not\ equal\ to\ the\ current\ Move\r\n\ \r\n\ @param\ \ y\ \ another\ Move\ to\ compare\ to\r\n\ @return\ \ \ \ if\ the\ incoming\ Move\ beats\ the\ current\ Move,\ the\ program\r\n\ \ \ \ \ \ \ \ \ \ \ \ will\ return\ a\ negative\ value,\ else\ it\ will\ return\ positive\r\n\ \ \ \ \ \ \ \ \ \ \ \ if\ the\ current\ Move\ beats\ the\ incoming\ Move,\ otherwise\r\n\ \ \ \ \ \ \ \ \ \ \ \ the\ program\ will\ return\ 0\r\n
 comment5.params=
 comment5.target=java.lang.String\ toString()
 numComments=6
