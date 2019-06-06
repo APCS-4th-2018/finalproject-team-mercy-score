@@ -17,13 +17,20 @@ import javafx.scene.input.KeyEvent;
 import javafx.event.EventHandler;
 import javafx.scene.text.*;
 import java.util.concurrent.TimeUnit;
+import java.util.Timer;
+import java.util.TimerTask;
+
 
 
 public class Game extends Application{
+
     boolean shoot, block, reload;
     int lives = 3;
     int bullets = 0;
     int blocks = 5;
+    int currentRound = 1;
+    int rounds = 1;
+
    
     private Node hero;
     public  boolean press = false;
@@ -41,7 +48,11 @@ public class Game extends Application{
 
         Image hero = new Image("http://icons.iconarchive.com/icons/raindropmemory/legendora/64/Hero-icon.png");
         
+        Circle ball = new Circle(5, Color.BLACK);
 
+        Text timerDisplay = new Text(390, 50, "Timer");
+        timerDisplay.setFont(new Font(20));
+        
         Text t = new Text(10, 50, "Lives: " + lives);
         t.setFont(new Font(20));
         
@@ -64,6 +75,7 @@ public class Game extends Application{
         canvas.getChildren().add(t);
         canvas.getChildren().add(x);
         canvas.getChildren().add(y);
+        canvas.getChildren().add(timerDisplay);
         //input controller
 
 
@@ -84,12 +96,20 @@ public class Game extends Application{
                 public void handle(long now) {
 
                     if (shoot) {
-                        playerShootAnimation(canvas);                        
+                        if (bullets > 0)
+                        {
+                            playerShootAnimation(canvas);   
+                            bullets--;
+                        }
+                        x.setText("Ammo: " + bullets);
+                        
                         shoot = false;
                     }
 
                     if (block) {
+                        if (blocks > 0)
                         blocks--;
+                        
                         y.setText("Blocks: " + blocks);
                         block = false;
                     }
@@ -122,7 +142,7 @@ public class Game extends Application{
         canvas.getChildren().add(ball);
         Bounds bounds = canvas.getBoundsInLocal();
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2), 
-                    new KeyValue(ball.layoutXProperty(), bounds.getMaxX()-ball.getRadius())));
+                    new KeyValue(ball.layoutXProperty(), (bounds.getMaxX()-30)-ball.getRadius())));
         timeline.play();
 
         double translateX = ball.getTranslateX(); 
@@ -132,22 +152,20 @@ public class Game extends Application{
     public static void enemyShootAnimation(Pane canvas)
 
     {
-        Circle ball = new Circle(5, Color.BLACK);
+
         ball.relocate(50, (canvas.getHeight())/2);
 
         
         canvas.getChildren().add(ball);
+        
         Bounds bounds = canvas.getBoundsInLocal();
         Timeline timeline = new Timeline(new KeyFrame(Duration.seconds(2), 
                     new KeyValue(ball.layoutXProperty(), bounds.getMaxX()-ball.getRadius())));
+                    
         timeline.play();
-
-        double translateX = ball.getTranslateX(); 
-
-        Text x = new Text(10, 80, "x: " + translateX);
-        x.setFont(new Font(20));
-
-        canvas.getChildren().add(x);
+        
+        canvas.getChildren().remove(ball);
+        
     }
     
     public static void displayEnemyDamage(ImageView target) {
@@ -162,16 +180,7 @@ public class Game extends Application{
     {
         
     }
-    
-    public static void updateBlock()
-    {
-        
-    }
-    
-    public static void updateAmmo()
-    {
-        
-    }
+
 
     public static void main(String[] args) {
         launch();
