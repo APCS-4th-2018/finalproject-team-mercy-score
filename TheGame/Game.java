@@ -21,16 +21,17 @@ import java.util.concurrent.TimeUnit;
 
 public class Game extends Application{
     boolean shoot, block, reload;
-    int lives = 3;
-    int bullets = 0;
-    int blocks = 5;
+    int lives = 5, blocks = 3, bullets = 1;
+    theGame game = new theGame(3);
+    Move player1m, player2m;
+    
    
     private Node hero;
     public  boolean press = false;
     @Override
     public void start(Stage stage) {
         //create canvas and sets the background
-
+    
         Pane canvas = new Pane();
         BackgroundImage myBI= new BackgroundImage(new Image("https://cdn.dribbble.com/users/705826/screenshots/2680904/_______.jpg",800,600,false,true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
