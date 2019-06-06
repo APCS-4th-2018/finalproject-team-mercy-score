@@ -181,9 +181,7 @@ public class Double07
             case 3:
                 p2.setBlockCounter(p2.getBlockCounter()-2);
                 break;
-            //Doing nothing
-            case 4:
-                p2.setBlockCounter(p2.getBlockCounter()+1);
+
         }
         //Dealing with number of lives
         if ( p2.getMove().compareTo(p1.getMove()) < 0 )
