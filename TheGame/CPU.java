@@ -76,7 +76,6 @@ public class CPU extends Double07
         }
         //Load the found move in currentMove
         currentMove = ans;
-        dealWithCounters(currentMove.getType());
     }
     
     /*
@@ -97,7 +96,6 @@ public class CPU extends Double07
             else
                 currentMove = new Move(1);
         }
-        dealWithCounters(currentMove.getType());
     }
     
     /**

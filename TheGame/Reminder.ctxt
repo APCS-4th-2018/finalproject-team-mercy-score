@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=Reminder
-comment0.text=\r\n\ Simple\ demo\ that\ uses\ java.util.Timer\ to\ schedule\ a\ task\ \r\n\ to\ execute\ once\ 5\ seconds\ have\ passed.\r\n
-comment1.params=seconds
-comment1.target=Reminder(int)
-comment2.params=args
-comment2.target=void\ main(java.lang.String[])
-numComments=3

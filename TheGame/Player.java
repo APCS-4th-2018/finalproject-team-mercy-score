@@ -16,7 +16,6 @@ public class Player extends Double07
     public void setMove(Move input)
     {
         currentMove = input;
-        dealWithCounters(currentMove.getType());
     }
     
     

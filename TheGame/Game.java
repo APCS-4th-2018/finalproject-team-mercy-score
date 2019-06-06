@@ -17,7 +17,6 @@ import javafx.scene.input.KeyEvent;
 import javafx.event.EventHandler;
 import javafx.scene.text.*;
 import java.util.concurrent.TimeUnit;
-<<<<<<< HEAD
 import java.util.Timer;
 import java.util.TimerTask;
 import javafx.event.ActionEvent;
@@ -26,44 +25,20 @@ public class Game extends Application {
     int x = 0;
     int total = 1000;
     boolean shoot, block, reload, shoot2, block2, reload2;
+    Move myMove;
     boolean hasMoved = false;
-    //player 1
-    int lives = 3;
-    int bullets = 0;
-    int blocks = 5;
-    
-    //player 2
-    int lives2 = 3;
-    int bullets2 = 0;
-    int blocks2 = 5;
-    
-    
+    Backend myBackend = new Backend(5);
     int currentRound = 1;
-
-
-=======
-
-
-public class Game extends Application{
-    boolean shoot, block, reload;
-    int lives = 5, blocks = 3, bullets = 1;
-    theGame game = new theGame(3);
-    Move player1m, player2m;
     
-   
->>>>>>> 04544f8b6825241bb66e72dbdd078cb6f10e1a6e
-    private Node hero;
-    public  boolean press = false;
+
+
+    Node hero;
+    boolean press = false;
     @Override
     public void start(Stage stage) {
-<<<<<<< HEAD
-        int delay = 1000, period = 100;
 
         //create canvas and sets the background
-=======
-        //create canvas and sets the background
-    
->>>>>>> 04544f8b6825241bb66e72dbdd078cb6f10e1a6e
+
         Pane canvas = new Pane();
         BackgroundImage myBI= new BackgroundImage(new Image("https://cdn.dribbble.com/users/705826/screenshots/2680904/_______.jpg",800,600,false,true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
@@ -76,29 +51,28 @@ public class Game extends Application{
 
 
         //player stats
-        Text t = new Text(10, 50, "Lives: " + lives);
+        Text t = new Text(10, 50, "Your Lives: " + myBackend.getPlayer().getLives());
+        //Text t = new Text(10, 50, "Your Lives: ");
         t.setFont(new Font(20));
 
-        Text x = new Text(10, 80, "Ammo: " + bullets);
+        Text x = new Text(10, 80, "Your Ammo: "+myBackend.getPlayer().getBullets());
         x.setFont(new Font(20));
 
-        Text y = new Text(10, 110, "Blocks: " + blocks);
+        Text y = new Text(10, 110, "Your Blocks: " + myBackend.getPlayer().getBlockCounter());
         y.setFont(new Font(20));
-
+        
         //enemy stats
-        Text et = new Text(650, 50, "Enemy Lives: " + lives);
+        Text et = new Text(650, 50, "Enemy Lives: " + myBackend.getCPU().getLives());
         et.setFont(new Font(20));
 
-        Text ex = new Text(650, 80, "Enemy Ammo: " + bullets);
+        Text ex = new Text(650, 80, "Enemy Ammo: " + myBackend.getCPU().getBullets());
         ex.setFont(new Font(20));
 
-        Text ey = new Text(650, 110, "Enemy Blocks: " + blocks);
+        Text ey = new Text(650, 110, "Enemy Blocks: "+myBackend.getCPU().getBlockCounter());
         ey.setFont(new Font(20));
         
         Text roundDisplay = new Text(390, 50, "Round: " + currentRound);
         roundDisplay.setFont(new Font(20));
-                
-
 
         ImageView player = new ImageView();
         player.setImage(hero);
@@ -111,11 +85,13 @@ public class Game extends Application{
         canvas.getChildren().add(player);
         canvas.getChildren().add(enemy);
         canvas.getChildren().add(t);
+        
         canvas.getChildren().add(x);
         canvas.getChildren().add(y);
         canvas.getChildren().add(et);
         canvas.getChildren().add(ex);
         canvas.getChildren().add(ey);
+        
         canvas.getChildren().add(roundDisplay);
         
         //input controller
@@ -123,13 +99,10 @@ public class Game extends Application{
                 @Override
                 public void handle(KeyEvent event) {
                     switch (event.getCode()) {
-                        case RIGHT: block = true; break;
-                        case LEFT: shoot = true; break;
-                        case UP: reload = true; break;
+                        case RIGHT: myMove = new Move(3); hasMoved = true; break;
+                        case LEFT: myMove = new Move(2); hasMoved = true; break;
+                        case UP: myMove = new Move(1); hasMoved = true; break;
                         
-                        case D: shoot2 = true; break;
-                        case W: reload2 = true; break;
-                        case A: block2 = true; break;
                     }
                 }
             });
@@ -137,57 +110,22 @@ public class Game extends Application{
         AnimationTimer timer = new AnimationTimer() {
                 @Override
                 public void handle(long now) {
-
-                    if (shoot) {
-                        if (bullets > 0)
-                        {
-                            enemyShootAnimation(canvas);   
-                            bullets--;
-                        }
-                        ex.setText("Enemy Ammo: " + bullets);
-                        hasMoved = true;
-                        shoot = false;
-                    }
-
-                    if (block) {
-                        if (blocks > 0)
-                            blocks--;
-
-                        ey.setText("Enemy Blocks: " + blocks);
-                        block = false;
-                    }
-
-                    if (reload) {
-                        bullets++;
-                        ex.setText("Enemy Ammo: " + bullets);
-                        reload = false;
-                    }
+                    if (hasMoved && myBackend.validMove(myMove))
+                    {
+                        myBackend.setMoves(myMove);
+                        myBackend.update();
+                        
+                        et.setText("Enemy Lives: " + myBackend.getCPU().getLives());
+                        ex.setText("Enemy Ammo: " + myBackend.getCPU().getBullets());
+                        ey.setText("Enemy Blocks: "+myBackend.getCPU().getBlockCounter());
+                        t.setText("Your Lives: " + myBackend.getPlayer().getLives());
+                        x.setText("Your Ammo: "+myBackend.getPlayer().getBullets());
+                        y.setText("Your Blocks: " + myBackend.getPlayer().getBlockCounter());
+                        
+                        hasMoved = false;
+                    }   
                     
-                    
-                    if (shoot2) {
-                        if (bullets2 > 0)
-                        {
-                            playerShootAnimation(canvas);   
-                            bullets2--;
-                        }
-                        x.setText("Ammo: " + bullets2);
-                        hasMoved = true;
-                        shoot2 = false;
-                    }
-
-                    if (block2) {
-                        if (blocks2 > 0)
-                            blocks2--;
-
-                        y.setText("Blocks: " + blocks2);
-                        block2 = false;
-                    }
-
-                    if (reload2) {
-                        bullets2++;
-                        x.setText("Ammo: " + bullets2);
-                        reload2 = false;
-                    }
+                   
 
                 }
             };
@@ -242,15 +180,19 @@ public class Game extends Application{
 
     }
 
-    public static void displayEnemyDamage(ImageView target) {
-        Image og = new Image("http://icons.iconarchive.com/icons/raindropmemory/legendora/64/Hero-icon.png");
-        Image hurt = new Image("https://i.imgur.com/znzKcj0.png");
-        target.setImage(hurt);  
+    // public static void displayEnemyDamage(ImageView target) {
+        // Image og = new Image("http://icons.iconarchive.com/icons/raindropmemory/legendora/64/Hero-icon.png");
+        // Image hurt = new Image("https://i.imgur.com/znzKcj0.png");
+        // target.setImage(hurt);  
 
-        target.setImage(og);
-    }
+        // target.setImage(og);
+    // }
 
     public static void main(String[] args) {
         launch();
     }
+    
+
+    
 }
+

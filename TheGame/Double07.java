@@ -131,31 +131,63 @@ public class Double07
 
     }
     
-    /*
-     * Helper method that increments all the counters when a move is set
-     * @param int type - the type of the move
+
+    /**
+     * Summary: runs one set of moves between you and an opponent
+     * @param Move yourMove - your type of Move
+     * @param Move cpuMove - CPU type of Move
      */
-    protected void dealWithCounters(int type)
+    public static void compareMoves(Double07 p1, Double07 p2)
     {
-        switch(type)
+        //Dealing with block counter and number of bullets
+        switch(p1.getMove().getType())
         {
             //Reloading
             case 1:
-                setBlockCounter(getBlockCounter()+1);
-                setBullets(getBullets()+1);
+                p1.setBlockCounter(p1.getBlockCounter()+1);
+                p1.setBullets(p1.getBullets()+1);
                 break;
             //Shooting
             case 2:
-                setBlockCounter(getBlockCounter()+1);
-                setBullets(getBullets()-1);
+                p1.setBlockCounter(p1.getBlockCounter()+1);
+                p1.setBullets(p1.getBullets()-1);
                 break;
             //Bloccing
             case 3:
-                setBlockCounter(getBlockCounter()-2);
+                p1.setBlockCounter(p1.getBlockCounter()-2);
                 break;
             //Doing nothing
             case 4:
-                setBlockCounter(getBlockCounter()+1);
+                p1.setBlockCounter(p1.getBlockCounter()+1);
         }
+        //Dealing with number of lives
+        if ( p1.getMove().compareTo(p2.getMove()) < 0 )
+            p1.setLives(p1.getLives()-1);
+            
+        //Dealing with block counter and number of bullets
+        switch(p2.getMove().getType())
+        {
+            //Reloading
+            case 1:
+                p2.setBlockCounter(p2.getBlockCounter()+1);
+                p2.setBullets(p2.getBullets()+1);
+                break;
+            //Shooting
+            case 2:
+                p2.setBlockCounter(p2.getBlockCounter()+1);
+                p2.setBullets(p2.getBullets()-1);
+                break;
+            //Bloccing
+            case 3:
+                p2.setBlockCounter(p2.getBlockCounter()-2);
+                break;
+            //Doing nothing
+            case 4:
+                p2.setBlockCounter(p2.getBlockCounter()+1);
+        }
+        //Dealing with number of lives
+        if ( p2.getMove().compareTo(p1.getMove()) < 0 )
+            p2.setLives(p2.getLives()-1);
+        
     }
 }

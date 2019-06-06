@@ -1,0 +1,22 @@
+#BlueJ class context
+comment0.target=Backend
+comment1.params=numWaves
+comment1.target=Backend(int)
+comment2.params=
+comment2.target=boolean\ deadPlayer()
+comment2.text=\r\n\ \ @return\ \ Returns\ -1\ if\ no\ player\ is\ dead\r\n\ \ \ \ \ \ 0\ if\ player\ 1\ is\ dead\ and\ player\ 2\ is\ alive\r\n\ \ \ \ \ \ 1\ if\ player\ 1\ is\ alive\ and\ player\ 2\ is\ dead\r\n\ \ \ \ \ \ 2\ if\ both\ players\ dead\r\n
+comment3.params=
+comment3.target=void\ nextWave()
+comment4.params=
+comment4.target=boolean\ isMoreWaves()
+comment5.params=x
+comment5.target=void\ setMoves(Move)
+comment6.params=
+comment6.target=void\ update()
+comment7.params=
+comment7.target=Player\ getPlayer()
+comment8.params=
+comment8.target=CPU\ getCPU()
+comment9.params=x
+comment9.target=boolean\ validMove(Move)
+numComments=10
