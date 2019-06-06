@@ -35,6 +35,7 @@ dependency8.type=UsesDependency
 dependency9.from=Player
 dependency9.to=Move
 dependency9.type=UsesDependency
+<<<<<<< Updated upstream
 editor.fx.0.height=694
 editor.fx.0.width=1294
 editor.fx.0.x=-7
@@ -51,6 +52,24 @@ package.frame.height=662
 package.frame.width=934
 package.numDependencies=12
 package.numTargets=8
+=======
+editor.fx.0.height=735
+editor.fx.0.width=1007
+editor.fx.0.x=90
+editor.fx.0.y=165
+objectbench.height=80
+objectbench.width=776
+package.divider.horizontal=0.6
+package.divider.vertical=0.8394833948339483
+package.editor.height=448
+package.editor.width=658
+package.editor.x=174
+package.editor.y=175
+package.frame.height=600
+package.frame.width=800
+package.numDependencies=9
+package.numTargets=6
+>>>>>>> Stashed changes
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8

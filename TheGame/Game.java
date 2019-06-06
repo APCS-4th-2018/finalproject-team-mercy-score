@@ -52,12 +52,12 @@ public class Game extends Application {
         Pane canvas = new Pane();
         BackgroundImage myBI= new BackgroundImage(new Image("assets/background.jpg",800,600,false,true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,
-                BackgroundSize.DEFAULT);
+                BackgroundSize.DEFAULT);//background image for the game
 
         canvas.setBackground(new Background(myBI));
         Scene scene = new Scene(canvas, 800, 600);
 
-        Image hero = new Image("assets/hero.png");
+        Image hero = new Image("assets/hero.png");//player and the enemy
         Image nonhero = new Image("assets/enemy.png");
        
         //player stats
@@ -108,12 +108,13 @@ public class Game extends Application {
         canvas.getChildren().add(ep);
         canvas.getChildren().add(roundDisplay);
         
+        //sorry for the terrible switch case format in advance
         //input controller
         scene.setOnKeyReleased(new EventHandler<KeyEvent>() {
                 @Override
                 public void handle(KeyEvent event) {
                     switch (event.getCode()) {
-                        case LEFT: myMove = new Move(3); hasMoved = true;
+                        case LEFT: myMove = new Move(3); hasMoved = true;//the move is a block
                         if ( myBackend.getPlayer().isMoveAllowed(new Move(3)) )
                         {
                             
@@ -122,7 +123,7 @@ public class Game extends Application {
                             playerBlockAnimation(canvas, player); 
                         }break;
                         
-                        case RIGHT: myMove = new Move(2); hasMoved = true; 
+                        case RIGHT: myMove = new Move(2); hasMoved = true; //the move is shoot
                         if ( myBackend.getPlayer().isMoveAllowed(new Move(2)) )
                         {
                             myBackend.setMoves(myMove);
@@ -130,7 +131,7 @@ public class Game extends Application {
                             playerShootAnimation(canvas, player); 
                         }break;
                         
-                        case UP: myMove = new Move(1); hasMoved = true; 
+                        case UP: myMove = new Move(1); hasMoved = true; //the move is block
                         if ( myBackend.getPlayer().isMoveAllowed(new Move(1)) )
                         {
                             myBackend.setMoves(myMove);
@@ -139,7 +140,7 @@ public class Game extends Application {
                         } break;
                     }
                     
-                    
+                    //same thing as above except with the CPU
                     if (myBackend.getCPU().getMove().getType() == 3)
                     {
                         enemyMoved = true;
@@ -198,10 +199,10 @@ public class Game extends Application {
                         hasMoved = false;
   
                     
-                    if (enemyMoved == true)
-                    {
-                        enemyMoved = false;
-                    }
+                        if (enemyMoved == true)
+                        {
+                            enemyMoved = false;
+                        }
 
                 }
             };

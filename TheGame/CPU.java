@@ -9,6 +9,12 @@ public class CPU extends Double07
 {
     private double myDifficulty;
     String name;
+    
+    /**
+     * Constructor for the CPU
+     * 
+     * @param double difficulty - Send the difficulty to be set for the CPU, between 1 and 10
+     */
     public CPU(double difficulty)
     {
         //Difficulty maxes out at 10

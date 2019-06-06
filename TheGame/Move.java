@@ -72,7 +72,11 @@ public class Move
         
         return ret;
     }
-    
+    /**
+     * toString() method that displays what the Move is
+     * 
+     * @return String - Returns a string of what the Move is doing
+     */
     public String toString()
     {
         String ret;

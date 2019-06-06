@@ -1,8 +1,8 @@
 /**
  * Write a description of class theGame here.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Team Mercy Score
+ * @version DDAY
  */
 import java.util.*;
 public class Backend
@@ -41,18 +41,20 @@ public class Backend
         
         currentRound = 1;//starting round
         
-        for(int count = 0; count < numWaves; count++)//giving the difficulty to the CPUs
+        for(int count = 0; count < numWaves; count++)//giving the difficulty to the CPUs& the names
         {
             difficulty = (count)*10.0/numWaves + 1.0;
             
             cpus.add(new CPU(difficulty));
+            x = (int)(Math.random()*names.size());
+            cpus.get(count).changeName(names.get(x));
         }
         
         user = new Player();
         fighter = cpus.remove(0);
         //Select a random name
-        x = (int)(Math.random()*names.size());
-        fighter.changeName(names.get(x));
+        //x = (int)(Math.random()*names.size());
+        //fighter.changeName(names.get(x));
 
     }
     
@@ -78,6 +80,8 @@ public class Backend
         if(fighter.isDead())
         {
             fighter = cpus.remove(0);
+            //int x = (int)(Math.random()*names.size());
+            //fighter.changeName(names.get(x));
             //Increment lives by 2
             user.setLives(user.getLives() + 2);
             //Increment block counters
