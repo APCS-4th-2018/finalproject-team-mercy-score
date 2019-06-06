@@ -17,6 +17,7 @@ import javafx.scene.input.KeyEvent;
 import javafx.event.EventHandler;
 import javafx.scene.text.*;
 import java.util.concurrent.TimeUnit;
+<<<<<<< HEAD
 import java.util.Timer;
 import java.util.TimerTask;
 import javafx.event.ActionEvent;
@@ -40,13 +41,29 @@ public class Game extends Application {
     int currentRound = 1;
 
 
+=======
+
+
+public class Game extends Application{
+    boolean shoot, block, reload;
+    int lives = 5, blocks = 3, bullets = 1;
+    theGame game = new theGame(3);
+    Move player1m, player2m;
+    
+   
+>>>>>>> 04544f8b6825241bb66e72dbdd078cb6f10e1a6e
     private Node hero;
     public  boolean press = false;
     @Override
     public void start(Stage stage) {
+<<<<<<< HEAD
         int delay = 1000, period = 100;
 
         //create canvas and sets the background
+=======
+        //create canvas and sets the background
+    
+>>>>>>> 04544f8b6825241bb66e72dbdd078cb6f10e1a6e
         Pane canvas = new Pane();
         BackgroundImage myBI= new BackgroundImage(new Image("https://cdn.dribbble.com/users/705826/screenshots/2680904/_______.jpg",800,600,false,true),
                 BackgroundRepeat.REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.DEFAULT,

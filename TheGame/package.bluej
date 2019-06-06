@@ -2,6 +2,7 @@
 dependency1.from=Player
 dependency1.to=Move
 dependency1.type=UsesDependency
+<<<<<<< HEAD
 dependency2.from=CPU
 dependency2.to=Move
 dependency2.type=UsesDependency
@@ -42,6 +43,48 @@ package.frame.height=694
 package.frame.width=1294
 package.numDependencies=9
 package.numTargets=10
+=======
+dependency2.from=Double07
+dependency2.to=Move
+dependency2.type=UsesDependency
+dependency3.from=GameTester
+dependency3.to=CPU
+dependency3.type=UsesDependency
+dependency4.from=GameTester
+dependency4.to=Player
+dependency4.type=UsesDependency
+dependency5.from=GameTester
+dependency5.to=Move
+dependency5.type=UsesDependency
+dependency6.from=theGame
+dependency6.to=CPU
+dependency6.type=UsesDependency
+dependency7.from=theGame
+dependency7.to=Player
+dependency7.type=UsesDependency
+dependency8.from=theGame
+dependency8.to=Move
+dependency8.type=UsesDependency
+dependency9.from=CPU
+dependency9.to=Move
+dependency9.type=UsesDependency
+editor.fx.0.height=739
+editor.fx.0.width=816
+editor.fx.0.x=104
+editor.fx.0.y=-4
+objectbench.height=213
+objectbench.width=1004
+package.divider.horizontal=0.6
+package.divider.vertical=0.6802325581395349
+package.editor.height=461
+package.editor.width=901
+package.editor.x=-336
+package.editor.y=162
+package.frame.height=788
+package.frame.width=1044
+package.numDependencies=9
+package.numTargets=9
+>>>>>>> 04544f8b6825241bb66e72dbdd078cb6f10e1a6e
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -66,6 +109,7 @@ target10.width=100
 target10.x=530
 target10.y=310
 target2.height=50
+<<<<<<< HEAD
 target2.name=Game
 target2.showInterface=false
 target2.type=ClassTarget
@@ -86,12 +130,38 @@ target4.type=ClassTarget
 target4.width=80
 target4.x=290
 target4.y=320
+=======
+target2.name=Pause
+target2.showInterface=false
+target2.type=ClassTarget
+target2.width=90
+target2.x=120
+target2.y=410
+target3.height=50
+target3.name=Move
+target3.showInterface=false
+target3.type=ClassTarget
+target3.width=80
+target3.x=290
+target3.y=320
+target4.height=50
+target4.name=deleteMe
+target4.showInterface=false
+target4.type=ClassTarget
+target4.width=80
+target4.x=613
+target4.y=105
+>>>>>>> 04544f8b6825241bb66e72dbdd078cb6f10e1a6e
 target5.height=50
 target5.name=theGame
 target5.showInterface=false
 target5.type=ClassTarget
 target5.width=80
+<<<<<<< HEAD
 target5.x=360
+=======
+target5.x=350
+>>>>>>> 04544f8b6825241bb66e72dbdd078cb6f10e1a6e
 target5.y=230
 target6.height=50
 target6.name=CPU
@@ -115,9 +185,18 @@ target8.width=100
 target8.x=420
 target8.y=120
 target9.height=50
+<<<<<<< HEAD
 target9.name=TESTINGbrodie
 target9.showInterface=false
 target9.type=ClassTarget
 target9.width=120
 target9.x=70
 target9.y=10
+=======
+target9.name=GameTester
+target9.showInterface=false
+target9.type=ClassTarget
+target9.width=100
+target9.x=530
+target9.y=280
+>>>>>>> 04544f8b6825241bb66e72dbdd078cb6f10e1a6e

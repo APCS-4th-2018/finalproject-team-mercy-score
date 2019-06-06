@@ -69,6 +69,12 @@ public class theGame
             fighters[1] = cpus.remove(0);
             ret = true;
         }
+        //Increment lives by 2
+        fighters[0].setLives(fighters[0].getLives() + 2);
+        fighters[1].setLives(fighters[1].getLives()+2);
+        //Increment block counters
+        fighters[0].setBlockCounter(fighters[0].getBlockCounter()+1);
+        fighters[1].setBlockCounter(fighters[1].getBlockCounter()+1);
         
         return ret;
     }
