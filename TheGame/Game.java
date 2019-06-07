@@ -173,10 +173,12 @@ public class Game extends Application {
                         et.setText("Enemy Lives: " + myBackend.getCPU().getLives());
                         ex.setText("Enemy Ammo: " + myBackend.getCPU().getBullets());
                         ey.setText("Enemy Blocks: "+myBackend.getCPU().getBlockCounter());
+                        ep.setText(myBackend.getCPU().getName());
                         t.setText("Your Lives: " + myBackend.getPlayer().getLives());
                         x.setText("Your Ammo: "+myBackend.getPlayer().getBullets());
                         y.setText("Your Blocks: " + myBackend.getPlayer().getBlockCounter());
                         roundDisplay.setText("Round: " + myBackend.getCurrentRound());
+                        
                         
                         if (myBackend.getPlayer().isDead())
                         {
@@ -208,7 +210,7 @@ public class Game extends Application {
             };
         timer.start();
 
-        myStage.setTitle("Bullet Test");
+        myStage.setTitle("Western Shootout");
         myStage.setScene(scene);
         myStage.show();
         
